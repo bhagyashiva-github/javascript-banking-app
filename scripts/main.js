@@ -2,7 +2,7 @@
 import Bank from "./scripts/modules/bank.js";
 
 // Import interest calculation function
-import { accrueInterest } from "./utils/calculateInterest.js";
+import { calculateInterest } from "./utils/calculateInterest.js";
 
 // Import custom logging utility
 import { log } from "./utils/logger.js";
@@ -19,15 +19,15 @@ Bank.bus.on("transfer", ({ fromId, toId, amount }) =>
   log(`Transferred $${amount} from ${fromId} → ${toId}`, "info")
 );
 
-// Perform the transfer and interest accrual asynchronously
+// Perform the transfer and interest calculation asynchronously
 (async () => {
   try {
     // Attempt to transfer $200 from Alice to Bob
     const msg = await Bank.validateAndTransfer(alice.id, bob.id, 200);
     log(msg, "info"); // Log the transfer success message
 
-    // Simulate interest accrual on Alice's remaining balance at a 2% rate
-    accrueInterest(alice.balance, 0.02, (interest) => {
+    // Simulate interest calculation on Alice's remaining balance at a 2% rate
+    calculateInterest(alice.balance, 0.02, (interest) => {
       log(`Interest credited to Alice: $${interest}`); // Log the interest earned
     });
   } catch (err) {

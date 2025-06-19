@@ -1,0 +1,24 @@
+{
+  // Specify the version of the debug configuration schema
+  "version": "0.2.0",
+
+  // An array of configuration objects for different debugging setups
+  "configurations": [
+    {
+      // Type of debugger; here it's Node.js
+      "type": "node",
+
+      // Defines the kind of request; "launch" means to start the program
+      "request": "launch",
+
+      // Friendly name shown in VS Code when selecting a configuration
+      "name": "JavaScript Banking App",
+
+      // The entry point file for the application to be debugged
+      "program": "${workspaceFolder}/scripts/main.js",
+
+      // Where to show the program's output; "integratedTerminal" uses VS Code's built-in terminal
+      "console": "integratedTerminal"
+    }
+  ]
+}
