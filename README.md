@@ -23,4 +23,4 @@ A fully modular, ES6+ JavaScript banking app that simulates customer accounts, d
 - Right-click on index.html → “Open with Live Server”
 
 ## Author 
-**Bhagya Sri Ramkumar**
+Bhagya Sri Ramkumar
